@@ -83,14 +83,15 @@
         </li>
         
         
-        <!-- see all -->
         <div id="{{collapse_id}}" class="collapse list-group-item">
+          <span>{{ collapse_id }}</span>
+          <!-- see all -->
           <li class="nav-item{% if _category_url == page.url %}{{ " active" }}{% endif %}" style="height: auto;">
             <a href="{{ _category_url | relative_url }}" class="nav-link">
               <span class="ml-xl-3 mr-xl-3">See all</span>
             </a>
           </li>
-        <!-- each -->
+          <!-- each -->
           {% for sub_category in sub_categories %}
             {% capture _sub_ctg_url %}/categories/{{ sub_category | slugify | url_encode }}/{% endcapture %}
             <li class="nav-item{% if _sub_ctg_url == page.url %}{{ " active" }}{% endif %}" style="height: auto;">
